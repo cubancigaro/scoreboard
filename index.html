@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Scoreboard</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <html>
+  
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=Windows-1252">
+    <script type="text/javascript">
+        var people, asc1 = 1,
+            asc2 = 1,
+            asc3 = 1;
+        window.onload = function () {
+            people = document.getElementById("people");
+        }
+
+        function sort_table(tbody, col, asc) {
+            var rows = tbody.rows,
+                rlen = rows.length,
+                arr = new Array(),
+                i, j, cells, clen;
+            // fill the array with values from the table
+            for (i = 0; i < rlen; i++) {
+                cells = rows[i].cells;
+                clen = cells.length;
+                arr[i] = new Array();
+                for (j = 0; j < clen; j++) {
+                    arr[i][j] = cells[j].innerHTML;
+                }
+            }
+            // sort the array by the specified column number (col) and order (asc)
+            arr.sort(function (a, b) {
+                return (a[col] == b[col]) ? 0 : ((a[col] > b[col]) ? asc : -1 * asc);
+            });
+            // replace existing rows with new rows created from the sorted array
+            for (i = 0; i < rlen; i++) {
+                rows[i].innerHTML = "<td>" + arr[i].join("</td><td>") + "</td>";
+            }
+        }
+    </script>
+  
+</head>
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th onclick="sort_table(people, 0, asc1); asc1 *= -1; asc2 = 1; asc3 = 1;">Team Name</th>
+                <th onclick="sort_table(people, 1, asc2); asc2 *= -1; asc3 = 1; asc1 = 1;">Color</th>
+                <th onclick="sort_table(people, 2, asc3); asc3 *= -1; asc1 = 1; asc2 = 1;">Points</th>
+            </tr>
+        </thead>
+        <tbody id="people">
+            <tr>
+                <td>Name</td>
+                <td id="id">Red</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Blue</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Green</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Yellow</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Orange</td>
+                <td>0</td>
+            </tr>
+          <tr>
+                <td>Name</td>
+                <td>Pink</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+  
+ <img src="http://www.thebavarianbierhaus.com/files/logo-black.png">
+  <h4 class = "web">TheBavarianBierhaus.com</h4>
+</html>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
