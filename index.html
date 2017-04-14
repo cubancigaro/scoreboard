@@ -3,6 +3,7 @@
 <head>
   <meta http-equiv="refresh" content="5" >
   <meta charset="UTF-8">
+  <script src="sorttable.js"></script>
   <title>Scoreboard</title>
 
 
@@ -54,7 +55,7 @@
 </head>
 
 <body>
-    <table class="table">
+    <table class="table sortable">
         <thead>
             <tr>
                 <th onclick="sort_table(people, 0, asc1); asc1 *= -1; asc2 = 1; asc3 = 1;">Team Name</th>
@@ -103,7 +104,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js'></script>
-
+<script src='https://www.kryogenix.org/code/browser/sorttable/sorttable.js'></script>
     <script src="js/index.js"></script>
 
 </body>
