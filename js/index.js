@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+  window.onload = function() {
+       (document.getElementsByTagName( 'th' )[2]).click();
+   };
+
 $("td:contains('Red')").css("background-color", "red");
 
 $("td:contains('Blue')").css("background-color", "blue");
